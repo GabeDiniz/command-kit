@@ -7,6 +7,10 @@ echo.
 echo  Commands available:
 echo.
 
+echo  dependency-check
+echo    - Used for installing all required libraries
+echo.
+
 echo  example-command ^<parameter^>
 echo    - This command does something
 echo.
