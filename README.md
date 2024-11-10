@@ -13,8 +13,16 @@ Command Kit
 │   └── <other batch scripts>       # Additional batch scripts for quick commands
 │
 ├── 📂 Scripts
-│   ├── <other Python scripts>      # Python scripts for various automation tasks
+│   └── <other Python scripts>      # Python scripts for various automation tasks
 │
 ├── README.md                       # Project documentation
 └── requirements.txt                # Python libraries required for this project
 ```
+
+# 🚀 Getting Started
+
+### Running Commands
+
+Once the repository is clone, simply run the config.bat file to add bin to your path environment variable. From there, you can open a command prompt and run any of the following commands from any directory. You may need to run the dependency-check command to install required libraries for some scripts.
+
+Run 'commands' in the command prompt to get a list of current available commands.
