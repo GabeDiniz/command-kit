@@ -7,7 +7,7 @@ echo.
 echo  Commands available:
 echo.
 
-echo  dependency-check
+echo  config-libs
 echo    - Used for installing all required libraries
 echo.
 
