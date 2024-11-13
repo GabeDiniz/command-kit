@@ -1,7 +1,9 @@
 import time
+import argparse
+import sys
 from playsound import playsound
 
-def countdown_timer(minutes, alert_sound="alarm.mp3"):
+def countdown_timer(minutes, alert_sound="../python-scripts/alarm.mp3"):
     """
     Starts a countdown timer for the given number of minutes with a sound alert at the end.
     
@@ -27,5 +29,25 @@ def countdown_timer(minutes, alert_sound="alarm.mp3"):
     except KeyboardInterrupt:
         print("\nTimer interrupted.")
 
-# Usage Example
-countdown_timer(0.02, "alarm.mp3")
+def main():
+    # Set up argument parsing
+    parser = argparse.ArgumentParser(
+        description="Start a timer.",
+        usage="timer.py <time_in_minutes>"
+    )
+    parser.add_argument("time_in_minutes", type=float, help="The number of minutes the timer should run for")
+    
+    # If no arguments are passed, print help and exit
+    if len(sys.argv) < 2:
+        parser.print_help()
+        sys.exit(1)
+
+    # Parse the arguments
+    args = parser.parse_args()
+    
+    # Call the move_project function with the provided arguments
+    countdown_timer(args.time_in_minutes)
+
+
+if __name__ == "__main__":
+    main()
