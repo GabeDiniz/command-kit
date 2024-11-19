@@ -23,6 +23,6 @@ Command Kit
 
 ### Running Commands
 
-Once the repository is cloned, simply run the config.bat file to add bin to your path environment variable. From there, you can open a command prompt and run any of the following commands from any directory. You may need to run the dependency-check command to install required libraries for some scripts.
+Once the repository is cloned, simply run the config.bat file as Administrator to add the bin folder to your path environment variable. From there, you can open a command prompt and run any of the following commands from any directory. You may need to run the dependency-check command to install required libraries for some scripts.
 
 Run 'commands' in the command prompt to get a list of current available commands.
