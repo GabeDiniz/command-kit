@@ -16,7 +16,7 @@ if %errorlevel%==0 (
     if %errorlevel%==0 (
         echo Successfully added %current_dir% to the PATH.
     ) else (
-        echo Failed to add %current_dir% to the PATH. Try running as administrator.
+        echo Failed to add %current_dir% to the PATH. Try running as administrator...
     )
 )
 
