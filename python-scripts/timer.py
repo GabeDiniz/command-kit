@@ -3,7 +3,7 @@ import argparse
 import sys
 from playsound import playsound
 
-def countdown_timer(minutes, alert_sound="../python-scripts/alarm.mp3"):
+def countdown_timer(minutes, alert_sound="alarm.mp3"):
     """
     Starts a countdown timer for the given number of minutes with a sound alert at the end.
     
