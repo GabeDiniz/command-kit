@@ -1,6 +1,7 @@
 import time
 import argparse
 import sys
+import os
 from playsound import playsound
 
 def countdown_timer(minutes, alert_sound="alarm.mp3"):
@@ -11,6 +12,10 @@ def countdown_timer(minutes, alert_sound="alarm.mp3"):
     - minutes: Number of minutes for the countdown
     - alert_sound: Path to the sound file to play when the timer finishes
     """
+    # Get the absolute path to the alert sound
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the script
+    alert_sound_path = os.path.join(script_dir, alert_sound)
+    
     total_seconds = int(minutes * 60)  # Convert to integer total seconds
 
     try:
@@ -24,7 +29,7 @@ def countdown_timer(minutes, alert_sound="alarm.mp3"):
             total_seconds -= 1
 
         print("Time's up! 🚀")
-        playsound(alert_sound)
+        playsound(alert_sound_path)
 
     except KeyboardInterrupt:
         print("\nTimer interrupted.")
