@@ -16,6 +16,10 @@ echo  timer ^<time-in-minutes^>
 echo    - Set a timer that alerts you with a sound once its done
 echo.
 
+echo  get-api ^<API-URL^>
+echo    - Fetches an API endpoint (method GET)
+echo.
+
 echo  example-command ^<parameter^>
 echo    - This command does something
 echo.
