@@ -26,3 +26,30 @@ Command Kit
 Once the repository is cloned, simply run the `config.bat` file as **Administrator** to add the bin folder to your path environment variable. From there, you can open a command prompt and run any of the following commands from any directory. You may need to run the dependency-check command to install required libraries for some scripts.
 
 Run 'commands' in the command prompt to get a list of current available commands.
+
+# ✍ Contributing
+
+We welcome contributions to Command Kit! To maintain a consistent structure and ensure ease of use, please follow these guidelines when adding new scripts or features:
+
+1. Scripts Folder:
+
+- All scripts should be placed inside the scripts folder. This keeps the repository organized and makes it easier to locate the scripts.
+- Use clear and descriptive filenames for your scripts, indicating their purpose (e.g., cleanup_logs.py, generate_report.bat).
+
+2. Bin Folder:
+
+- For every script added to the scripts folder, create a callable batch file or command that resides in the bin folder. This allows users to easily execute scripts from the command line.
+- The batch file should invoke the corresponding script from the scripts folder. For example:
+
+```bat
+Copy code
+@echo off
+python "%~dp0\..\scripts\your_script_name.py" %\*
+```
+
+3. Coding Standards:
+
+- Use clean and readable code with comments explaining non-obvious logic.
+- Follow best practices for the scripting language you are using.
+
+By following these steps, you'll help keep Command Kit organized, user-friendly, and easy to maintain. Thank you for your contributions! 🚀
