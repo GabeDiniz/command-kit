@@ -20,6 +20,10 @@ echo  get-api ^<API-URL^>
 echo    - Fetches an API endpoint (method GET)
 echo.
 
+echo  organize ^<C:\path\to\folder^>
+echo    - Automatically organize files in a folder based on extensions.
+echo.
+ 
 echo  example-command ^<parameter^>
 echo    - This command does something
 echo.
