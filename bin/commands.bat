@@ -20,6 +20,10 @@ echo  get-api ^<API-URL^>
 echo    - Fetches an API endpoint (method GET)
 echo.
 
+echo  git-pull
+echo    - Automatically git pull for multiple repositories in the directory you're in.
+echo.
+
 echo  organize ^<C:\path\to\folder^>
 echo    - Automatically organize files in a folder based on extensions.
 echo.
