@@ -27,6 +27,13 @@ echo.
 echo  organize ^<C:\path\to\folder^>
 echo    - Automatically organize files in a folder based on extensions.
 echo.
+
+echo  open ^<github-repo^>
+echo    - Open your GitHub project folders in VS Code. 
+echo    - Note, you must edit the base_directory parameter with the
+echo      directory where your projects are stored. Requires `code .`
+echo      to be configured for opening directories in VS Code.
+echo.
  
 echo  example-command ^<parameter^>
 echo    - This command does something
