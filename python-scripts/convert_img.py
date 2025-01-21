@@ -38,8 +38,13 @@ def convert_image(source_path, output_format):
         print(f"Converted: {file_path} -> {output_file}")
     except Exception as e:
       print(f"Failed to convert {file_path}: {e}")
-
-  print(f"Conversion completed. Output files are in: '{output_dir}'.")
+  
+  # Handle output directory message for single files
+  if os.path.abspath(output_dir) == os.getcwd():
+    output_location = os.getcwd()
+  else:
+    output_location = f"'{os.path.abspath(output_dir)}'"
+  print(f"Conversion completed! Output files are in: {output_location}.")
 
 
 if __name__ == "__main__":
