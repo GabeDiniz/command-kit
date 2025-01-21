@@ -4,13 +4,13 @@ import sys
 import os
 from playsound import playsound
 
-def countdown_timer(minutes, alert_sound="alarm.mp3"):
+def countdown_timer(minutes: str, alert_sound="alarm.mp3"):
     """
     Starts a countdown timer for the given number of minutes with a sound alert at the end.
     
     Parameters:
-    - minutes: Number of minutes for the countdown
-    - alert_sound: Path to the sound file to play when the timer finishes
+    - minutes (str): Number of minutes for the countdown
+    - alert_sound (file: mp3): Path to the sound file to play when the timer finishes
     """
     # Get the absolute path to the alert sound
     script_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the script
