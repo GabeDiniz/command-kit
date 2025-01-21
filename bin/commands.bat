@@ -28,6 +28,10 @@ echo  organize ^<C:\path\to\folder^>
 echo    - Automatically organize files in a folder based on extensions.
 echo.
 
+echo  convert_img ^<./directory or image.ext^> ^<png-jpg-jpeg-etc^>
+echo    - Automatically convert image types file by file or by directory.
+echo.
+
 echo  open ^<github-repo^>
 echo    - Open your GitHub project folders in VS Code. 
 echo    - Note, you must edit the base_directory parameter with the
