@@ -15,13 +15,13 @@ def convert_image(source_path, output_format):
     return
 
   # Determine if the source_path is a file or a directory
-  if os.path.isfile(source_path):
+  if not os.path.exists(source_path):
     files = [source_path]
     output_dir = os.path.dirname(source_path)  # Use the same directory as the source file
   # Else, source_path is a directory
   else:
     files = [os.path.join(source_path, f) for f in os.listdir(source_path)
-              if f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp', 'tiff'))]
+              if f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp', 'tiff')) and not f.startswith(".")]
     output_dir = os.path.join(source_path, "converted_images")
     os.makedirs(output_dir, exist_ok=True)
 
