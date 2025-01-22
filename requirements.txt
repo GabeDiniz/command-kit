@@ -1,3 +1,4 @@
 requests
 playsound
 Pillow
+speedtest-cli
