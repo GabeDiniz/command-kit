@@ -28,7 +28,7 @@ echo  organize ^<C:\path\to\folder^>
 echo    - Automatically organize files in a folder based on extensions.
 echo.
 
-echo  convert_img ^<./directory or image.ext^> ^<png-jpg-jpeg-etc^>
+echo  convert-img ^<./directory or image.ext^> ^<png-jpg-jpeg-etc^>
 echo    - Automatically convert image types file by file or by directory.
 echo.
 
