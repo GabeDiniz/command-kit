@@ -32,6 +32,10 @@ echo  convert-img ^<./directory or image.ext^> ^<png-jpg-jpeg-etc^>
 echo    - Automatically convert image types file by file or by directory.
 echo.
 
+echo  speed-test
+echo    -  Log internet download and upload speed at the requested interval.
+echo.
+
 echo  open ^<github-repo^>
 echo    - Open your GitHub project folders in VS Code. 
 echo    - Note, you must edit the base_directory parameter with the
