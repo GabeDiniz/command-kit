@@ -32,6 +32,11 @@ echo  convert-img ^<./directory or image.ext^> ^<png-jpg-jpeg-etc^>
 echo    - Automatically convert image types file by file or by directory.
 echo.
 
+echo  ascii-art "<text>" [font]
+echo    - Convert text into ASCII art. [font] refers to the font style you want 
+echo      to use (e.g., block, slant, thin).
+echo.
+
 echo  speed-test
 echo    -  Log internet download and upload speed at the requested interval.
 echo.
