@@ -16,12 +16,33 @@ def generate_ascii_art(input_text: str, font="standard"):
   except Exception as e:
     return f"Error generating ASCII art: {e}"
 
+def get_valid_input(prompt, allow_blank=False):
+  """
+  Continuously prompts the user until valid input is provided.
+  
+  Parameters:
+  - prompt (str): The message to display to the user.
+  - allow_blank (bool): Whether to allow blank input (defaults to False).
+  """
+  while True:
+    user_input = input(prompt).strip()
+    if allow_blank and not user_input:
+      return "standard"  # Default font if left blank
+    if user_input:
+      return user_input
+    print("Input cannot be empty. Please try again.")
+
 if __name__ == "__main__":
+  print(sys.argv)
   if len(sys.argv) < 2:
-    print("Usage: python ascii_art.py <text> [font]")
-    print("Example: python ascii_art.py Hello block")
+    input_text = get_valid_input("Please enter the text you would like to convert: ")
+    font = get_valid_input("Please enter the Font style (leave blank for 'standard'): ", allow_blank=True)
+
+    if font not in FONT_NAMES:
+      print(f"Font '{font}' is not valid. Defaulting to 'standard'.")
+      font = "standard"
   else:
     input_text = sys.argv[1]
     font = sys.argv[2] if len(sys.argv) > 2 else "standard"
-    result = generate_ascii_art(input_text, font)
-    print(result)
+  result = generate_ascii_art(input_text, font)
+  print(result)
