@@ -33,7 +33,13 @@ def get_valid_input(prompt, allow_blank=False):
     print("Input cannot be empty. Please try again.")
 
 if __name__ == "__main__":
-  print(sys.argv)
+  # List available fonts
+  if "--list-fonts" in sys.argv:
+    print("Available fonts:")
+    print(", ".join(FONT_NAMES))
+    sys.exit(0)
+
+  print("Hint! To get the available fonts, run: ascii-art --list-fonts")
   if len(sys.argv) < 2:
     input_text = get_valid_input("Please enter the text you would like to convert: ")
     font = get_valid_input("Please enter the Font style (leave blank for 'standard'): ", allow_blank=True)
