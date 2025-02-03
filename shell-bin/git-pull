@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get the current directory
+CURRENT_DIR="$(pwd)"
+
+echo "📂 Scanning subdirectories in: $CURRENT_DIR"
+
+# Iterate over all subdirectories
+for dir in "$CURRENT_DIR"/*/; do
+    # Check if the directory contains a .git folder (indicating a Git repo)
+    if [ -d "$dir/.git" ]; then
+        echo
+        echo "🔄 Pulling changes in: $dir"
+        cd "$dir" || continue
+        git pull
+        cd "$CURRENT_DIR" || exit 1
+    else
+        echo "⚠️ Skipping $dir (Not a Git repository)"
+    fi
+done
+
+echo
+echo "✅ All repositories updated."
