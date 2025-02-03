@@ -32,6 +32,10 @@ echo      speed-test
 echo        - Logs internet download and upload speeds at a set interval.
 echo.
 
+echo      lookup <ip-address>
+echo        - Geolocate an IP address.
+echo.
+
 echo  DEVELOPMENT and GIT
 echo.
 echo      git-pull
