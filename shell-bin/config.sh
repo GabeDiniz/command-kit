@@ -31,8 +31,8 @@ else
     echo "🔄 Restart your terminal or run: source $PROFILE_FILE"
 fi
 
-# Make all scripts in the current directory executable
+# Make sure we are only targeting files (not directories)
 echo "🔧 Granting execute permission to all scripts in $CURRENT_DIR..."
-chmod +x "$CURRENT_DIR"/* 2>/dev/null
+find "$CURRENT_DIR" -type f -name "*.sh" -exec chmod +x {} \;
+find "$CURRENT_DIR" -type f ! -name "*.*" -exec chmod +x {} \;
 echo "✅ All scripts in $CURRENT_DIR are now executable."
-
