@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Default directory where repositories are stored (Modify as needed)
+BASE_DIRECTORY="$HOME/Desktop/Code"
+
+# Check if a repository name was provided
+if [ -z "$1" ]; then
+    echo "❌ You must provide the name of the GitHub repository."
+    echo "📌 Usage: open-repo <github-repo>"
+    exit 1
+fi
+
+REPO_NAME="$1"
+REPO_PATH="$BASE_DIRECTORY/$REPO_NAME"
+
+# Check if the repository exists
+if [ -d "$REPO_PATH" ]; then
+    echo "📂 Opening repository: $REPO_NAME..."
+    cd "$REPO_PATH" || exit
+    code .
+else
+    echo "❌ Error: Repository '$REPO_NAME' does not exist in $BASE_DIRECTORY."
+    exit 1
+fi
