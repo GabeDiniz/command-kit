@@ -1,13 +1,22 @@
 @echo off
 
-REM Get the current directory
-set "current_dir=%cd%"
+:: Get the current directory
+set "CURRENT_DIR=%cd%"
 
-REM Iterate over all subdirectories in the current directory
-for /d %%d in ("%current_dir%\*") do (
-    echo .
-    echo Pulling changes in %%d...
-    cd %%d
-    git pull
-    cd "%current_dir%"
+echo 📂 Scanning subdirectories in: %CURRENT_DIR%
+
+:: Iterate over all subdirectories
+for /d %%D in (*) do (
+    if exist "%%D\.git" (
+        echo.
+        echo 🔄 Pulling changes in: %%D
+        cd "%%D"
+        git pull
+        cd "%CURRENT_DIR%"
+    ) else (
+        echo ⚠️ Skipping %%D (Not a Git repository)
+    )
 )
+
+echo.
+echo ✅ All repositories updated.
