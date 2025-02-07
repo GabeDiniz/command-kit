@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul  & REM Set UTF-8 Encoding
 
 :: Get the current directory
 set "CURRENT_DIR=%cd%"
