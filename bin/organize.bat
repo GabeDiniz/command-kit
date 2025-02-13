@@ -1,16 +1,30 @@
 @echo off
+setlocal enabledelayedexpansion
 
-REM Check if parameter is provided
-if "%1"=="" (
-  echo Usage: organize ^<C:\path\to\folder^>
-  exit /b 1
+:: Set default source directory to the current working directory
+set "source=%cd%"
+
+:: Check if a parameter is provided, use it as the source directory
+if not "%~1"=="" set "source=%~1"
+
+:: Ensure the source directory exists
+if not exist "%source%" (
+    echo ❌ Error: The directory "%source%" does not exist.
+    exit /b 1
 )
 
-set "source=%1"
+echo 📂 Organizing files in: %source%
 
-for %%f in ("%source%\*") do (
-    for %%x in (%%~xf) do (
-        if not exist "%source%\%%x\" mkdir "%source%\%%x"
-        move "%%f" "%source%\%%x\"
+:: Iterate through all files in the directory
+for %%f in ("%source%\*.*") do (
+    set "ext=%%~xf"
+    set "ext=!ext:~1!"  :: Remove the leading dot
+
+    if not "!ext!"=="" ( 
+        if not exist "%source%\!ext!\" mkdir "%source%\!ext!"
+        move "%%f" "%source%\!ext!\"
     )
 )
+
+echo ✅ Organization complete!
+endlocal
