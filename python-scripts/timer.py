@@ -38,7 +38,7 @@ def main():
   # Set up argument parsing
   parser = argparse.ArgumentParser(
     description="Start a timer.",
-    usage="timer.py <time_in_minutes>"
+    usage="📌 timer.py <time_in_minutes>"
   )
   parser.add_argument("time_in_minutes", type=float, help="The number of minutes the timer should run for")
   

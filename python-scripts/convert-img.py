@@ -49,7 +49,7 @@ def convert_image(source_path, output_format):
 
 if __name__ == "__main__":
   if len(sys.argv) != 3:
-    print("Usage: python convert_img.py <source_path> <output_format>")
+    print("📌 Usage: python convert_img.py <source_path> <output_format>")
     print("Example 1: python convert_img.py ./images JPEG <- Convert ALL images in images/ dir")
     print("Example 2: python convert_img.py ./image.png BMP <- Convert single file")
     print("Example 3: python convert_img.py ./ PNG <- ALL images in current dir")
