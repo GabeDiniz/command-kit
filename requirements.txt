@@ -3,3 +3,4 @@ playsound
 Pillow
 speedtest-cli
 art
+pyyaml
