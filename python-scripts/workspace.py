@@ -45,6 +45,20 @@ def open_workspace(workspace_name):
     print(f"❌ Workspace '{workspace_name}' not found.")
     print("📌 Available workspaces:", ", ".join(workspaces.keys()))
     
+def add_workspace(workspace_name, urls):
+  """Adds a new workspace to the YAML file."""
+  workspaces = load_workspaces()
+  workspaces[workspace_name] = urls
+  save_workspaces(workspaces)
+  print(f"✅ Workspace '{workspace_name}' added successfully!")
+
+def save_workspaces(workspaces):
+  """Save workspaces to the YAML file."""
+  print(WORKSPACE_FILE)
+  with open(WORKSPACE_FILE, "w", encoding="utf-8") as file:
+    yaml.dump(workspaces, file, default_flow_style=False)
+  print("✅ Workspaces saved successfully!")
+
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:
@@ -59,7 +73,7 @@ if __name__ == "__main__":
   if command == "add" and len(sys.argv) > 3:
     workspace_name = sys.argv[2]
     urls = sys.argv[3:]
-    # add_workspace(workspace_name, urls)
+    add_workspace(workspace_name, urls)
   elif command == "list":
     list_workspaces()
   else:
