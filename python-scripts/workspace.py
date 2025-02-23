@@ -59,6 +59,17 @@ def save_workspaces(workspaces):
     yaml.dump(workspaces, file, default_flow_style=False)
   print("✅ Workspaces saved successfully!")
 
+def remove_workspace(workspace_name):
+  """Removes a workspace from the YAML file."""
+  workspaces = load_workspaces()
+
+  if workspace_name in workspaces:
+    del workspaces[workspace_name]  # Delete the workspace
+    save_workspaces(workspaces)
+    print(f"✅ Workspace '{workspace_name}' removed successfully!")
+  else:
+    print(f"❌ Workspace '{workspace_name}' not found.")
+    print("📌 Available workspaces:", ", ".join(workspaces.keys()))
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:
@@ -74,6 +85,9 @@ if __name__ == "__main__":
     workspace_name = sys.argv[2]
     urls = sys.argv[3:]
     add_workspace(workspace_name, urls)
+  elif command == "remove" and len(sys.argv) > 2:
+    workspace_name = sys.argv[2]
+    remove_workspace(workspace_name)
   elif command == "list":
     list_workspaces()
   else:
