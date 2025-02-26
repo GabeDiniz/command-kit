@@ -1,3 +1,5 @@
 coding:
-  - https://github.com/GabeDiniz
-  - https://www.youtube.com
+  chrome:
+    - "https://github.com/GabeDiniz"
+  code:
+    - "~/Desktop/Code/discord-bot-v2"
