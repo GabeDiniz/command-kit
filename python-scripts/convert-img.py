@@ -13,20 +13,27 @@ def convert_image(source_path, output_format):
   if not os.path.exists(source_path):
     print(f"Error: Path '{source_path}' does not exist.")
     return
-
-  # Determine if the source_path is a file or a directory
-  if not os.path.exists(source_path):
+  
+  # Case 1: source is a single image file
+  if os.path.isfile(source_path):
     files = [source_path]
-    output_dir = os.path.dirname(source_path)  # Use the same directory as the source file
-  # Else, source_path is a directory
-  else:
-    files = [os.path.join(source_path, f) for f in os.listdir(source_path)
-              if f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp', 'tiff')) and not f.startswith(".")]
+    output_dir = os.path.dirname(source_path) or os.getcwd()
+
+  # Case 2: source is a directory
+  elif os.path.isdir(source_path):
+    files = [
+      os.path.join(source_path, f)
+      for f in os.listdir(source_path)
+      if f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp', 'tiff')) and not f.startswith(".")
+    ]
     output_dir = os.path.join(source_path, "converted_images")
     os.makedirs(output_dir, exist_ok=True)
+  else:
+    print(f"❌ Error: '{source_path}' is not a valid file or directory.")
+    return
 
   if not files:
-    print("No image files found to convert.")
+    print("⚠️ No image files found to convert.")
     return
 
   for file_path in files:
@@ -35,16 +42,15 @@ def convert_image(source_path, output_format):
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         output_file = os.path.join(output_dir, f"{file_name}.{output_format.lower()}")
         img.convert("RGB").save(output_file, format=output_format.upper())
-        print(f"Converted: {file_path} -> {output_file}")
+        print(f"✅ Converted: {file_path} -> {output_file}")
     except Exception as e:
-      print(f"Failed to convert {file_path}: {e}")
-  
-  # Handle output directory message for single files
+      print(f"❌ Failed to convert {file_path}: {e}")
+
   if os.path.abspath(output_dir) == os.getcwd():
     output_location = os.getcwd()
   else:
     output_location = f"'{os.path.abspath(output_dir)}'"
-  print(f"Conversion completed! Output files are in: {output_location}.")
+  print(f"\n🎉 Conversion completed! Output files are in: {output_location}.")
 
 
 if __name__ == "__main__":
