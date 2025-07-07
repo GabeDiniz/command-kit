@@ -15,7 +15,7 @@ for /d %%D in (*) do (
         git pull
         cd "%CURRENT_DIR%"
     ) else (
-        echo ⚠️ Skipping %%D (Not a Git repository)
+        echo ⚠️ Skipping %%D - NOT a valid Git repository
     )
 )
 
