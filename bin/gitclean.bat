@@ -2,7 +2,7 @@
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 
 REM Define protected branches
-set PROTECTED=main master develop
+set PROTECTED=main master develop dev prod uat
 
 REM Get current branch
 FOR /F %%i IN ('git rev-parse --abbrev-ref HEAD') DO set CURRENT_BRANCH=%%i
