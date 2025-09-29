@@ -27,10 +27,5 @@ echo "  --------------------"
 echo "      git-pull"
 echo "        - Runs 'git pull' automatically for multiple repositories in the current directory."
 echo
-echo "      open-repo <github-repo>"
-echo "        - Opens your GitHub project folders in VS Code."
-echo "        - Note: Update the 'base_directory' variable with the directory"
-echo "          where your projects are stored. Requires 'code .' to be set up."
-echo
 
 echo "================================================"
